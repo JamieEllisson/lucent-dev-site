@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75,400;100,300;100,350;100,400;100,500;100,600;100,700;100,800&display=swap');
+
+:root{
+    --bg-clr: #181818;
+    --bg-clr-inverted: #ffffff ;
+    --font-clr-primary: #999999;
+    --font-clr-accent: #800000;
+    --font-clr-black: #000000;
+    --font-clr-white: #ffffff;
+    --font-clr-hover: #d1d1d1;
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+html,
+body{
+    min-width: 20rem;
+    margin: 0;    
+}

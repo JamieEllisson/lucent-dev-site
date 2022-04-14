@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.navbar{
+    position: sticky;
+    top: 0;
+    z-index: 50;    
+    height: 4rem;      
+    font-family: 'Kanit', sans-serif;
+    background-color: var(--bg-clr);
+    border-bottom: solid 1px hsla(0, 0%, 100%, 0.1);  
+    box-shadow: 0 10px 10px -10px rgba(0,0,0,1);
+}
+
+.container{
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    height: inherit;
+}
+
+.logo_container{
+    display: flex;
+    height: inherit;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;   
+    min-width: 4rem;
+    border-right: solid 1px hsla(0, 0%, 100%, 0.1);  
+}
+
+.logo{
+    fill: var(--bg-clr-inverted);
+    width: 2.75rem;
+    height: 2rem;
+}
+
+.navbar_menu{
+    display: inline-flex;
+    align-items: center;
+    height: inherit;
+    
+}
+
+.links_line{
+    display: flex;
+    position: relative;
+    height: inherit;
+    align-items: center;
+}
+
+.navbar_links{    
+    display: block;
+    cursor: pointer;    
+    max-width: min-content;    
+    margin: auto 1.5rem;
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: var(--font-clr-primary);
+}
+
+.navbar_links:hover{
+    color: var(--font-clr-white);
+    transition: all 0.2s ease-in-out;
+}
+  
+.navbar_links:before, .navbar_links:after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    bottom: 0%;
+    background: var(--font-clr-accent);
+    opacity: 100%;
+}
+  
+.navbar_links:before {
+    left: 0px;
+}
+
+.navbar_links:after {
+    left: 0px;
+    background: var(--font-clr-accent);
+    transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+  
+  .navbar_links:hover:before {
+    background:  var(--font-clr-accent);
+    width: 100%;
+    transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+  
+  .navbar_links:hover:after {
+    background: transparent;
+    width: 100%;
+    transition: 0s;
+}
+
+
+  
+.hamburger_container{ 
+    display: flex;   
+    position: relative;       
+    height: inherit;
+    justify-content: center;
+    align-items: center;     
+    width: 4rem;
+    min-width: 4rem;
+    border-left: solid 1px hsla(0, 0%, 100%, 0.1);    
+}
+
+.hamburger{    
+    width: 1.875rem;
+    height: 0.125rem;
+    background-color: white;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out; 
+}
+
+.hamburger:focus{    
+    outline: none;
+    box-shadow: none;
+}
+
+.hamburger::before{
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background-color: white;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;     
+    transform: translate(-15px,-10px);
+}
+
+.hamburger::after{
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background-color: white;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out; 
+    transform: translate(-15px,10px);    
+}
+
+.hamburger_open{
+    width: 1.875rem;
+    height: 0.125rem;
+    background-color: white;
+    border-radius: 5px;
+    transform: translateX(-14px);
+    background-color: transparent;
+    transition: all 0.15s ease-in-out;
+}
+
+.hamburger_open::before{
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background-color: white;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out; 
+    transform: rotate(45deg) translate(0px,0px);
+}
+
+.hamburger_open::after{
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background-color: white;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out; 
+    transform: rotate(-45deg) translate(0px,0px);
+}
+
+@media screen and (min-width:50rem) {
+    .navbar{
+        height: 5rem;
+    }
+
+    .logo_container{
+        width: 5rem;  
+    }
+
+    .logo{
+        width: 3.25rem;
+        height: 2.25rem; 
+    }
+
+    .hamburger_container{
+        width: 5rem;
+    }
+}
+
+@media screen and (max-width:50rem) {
+    .navbar_menu{
+        display: none;
+    }
+}
